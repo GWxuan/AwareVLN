@@ -1,0 +1,73 @@
+# Local / publish exclusions (not uploaded to GitHub)
+.*
+!.gitignore
+ck
+data
+clash-for-linux/
+README_navila.md
+index.html
+
+*.whl
+*_dev
+8b
+dev/
+config.json
+eval_output/
+eval-result/
+hostfile
+core.*
+*.out
+captioner_bk/
+slurm-logs/
+captioner/
+hostfile
+*_dev.py
+*_dev.sh
+*.ipynb
+
+
+# Python
+__pycache__
+*.pyc
+*.egg-info
+dist
+
+# Log
+*.log
+*.log.*
+
+# Data
+.hf_data/
+.hf_ck_staging/
+.hf_data_package.log
+.hf_upload*.log
+!**/alpaca-data-conversation.json
+
+# Editor
+.idea
+*.swp
+
+# Other
+.DS_Store
+wandb
+output
+
+runs
+checkpoints
+checkpoints_bak
+ckpts*
+
+*.pt
+
+playground
+*/visualization/*
+.env
+server.log
+
+slurm-scripts
+
+# Sim
+evaluation/habitat-lab
+evaluation/habitat-sim
+evaluation/data
+evaluation/eval_out
