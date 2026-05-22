@@ -31,9 +31,9 @@ DATA_MIXTURE="${DATA_MIXTURE:-r2r+rxr+r2rfollow+rxrfollow+human}"
 # Priority:
 #   1) Generic env vars: NNODES / NPROC_PER_NODE / RANK / MASTER_ADDR / MASTER_PORT
 #   2) Platform env vars: MLP_WORKER_NUM / MLP_ROLE_INDEX / MLP_WORKER_0_HOST / MLP_WORKER_0_PORT
-#   3) Defaults for single-node debug
+#   3) Defaults for 3-node training
 # ---------------------------------------------------------------------------
-NNODES="${NNODES:-${MLP_WORKER_NUM:-1}}"
+NNODES="${NNODES:-${MLP_WORKER_NUM:-3}}"
 NPROC_PER_NODE="${NPROC_PER_NODE:-8}"
 RANK="${RANK:-${MLP_ROLE_INDEX:-0}}"
 MASTER_ADDR="${MASTER_ADDR:-${MLP_WORKER_0_HOST:-127.0.0.1}}"
