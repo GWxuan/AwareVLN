@@ -7,9 +7,9 @@
   &nbsp;
   <a href="https://arxiv.org/abs/2605.22816"><img src="https://img.shields.io/badge/arXiv-2605.22816-B31B1B?style=flat&labelColor=555555&logo=arxiv&logoColor=white" alt="Paper"></a>
   &nbsp;
-  <a href="https://cloud.tsinghua.edu.cn/d/3b94f370dcd945c3b24b/"><img src="https://img.shields.io/badge/Dataset-AwareVLN-FFD63A?style=flat&labelColor=555555" alt="Dataset"></a>
+  <a href="https://huggingface.co/datasets/gwx22/AwareVLN"><img src="https://img.shields.io/badge/Dataset-AwareVLN-FFD63A?style=flat&labelColor=555555" alt="Dataset"></a>
   &nbsp;
-  <a href="https://cloud.tsinghua.edu.cn/d/3b94f370dcd945c3b24b/"><img src="https://img.shields.io/badge/Checkpoint-AwareVLN-FFD63A?style=flat&labelColor=555555" alt="Checkpoint"></a>
+  <a href="https://huggingface.co/gwx22/AwareVLN-ck"><img src="https://img.shields.io/badge/Checkpoint-AwareVLN-FFD63A?style=flat&labelColor=555555" alt="Checkpoint"></a>
 </p>
 
 <p style="font-size:1.5em;font-weight:600;letter-spacing:0.03em;color:#555;margin:0.75em 0 0;"><strong>CVPR 2026</strong></p>
@@ -34,7 +34,7 @@ conda activate awarevln
 ```
 
 ### Dataset
-Training annotations of reasoning are produced by our **automatic data engine**, which labels sparse **self-aware reasoning** at key nodes. Download from [Dataset](https://cloud.tsinghua.edu.cn/d/3b94f370dcd945c3b24b/) and extract `videos.tar.gz` in each subfolder.
+Training annotations of reasoning are produced by our **automatic data engine**, which labels sparse **self-aware reasoning** at key nodes. Download from [Dataset](https://huggingface.co/datasets/gwx22/AwareVLN) and extract `videos.tar.gz` in each subfolder.
 
 * **r2r / rxr:** Trajectories from rollouts of existing policy, with corrections when needed; reasoning annotations from our data engine.
 * **r2rfollow / rxrfollow:** Trajectories that follow expert paths; reasoning annotations from our data engine.
@@ -65,7 +65,7 @@ AwareVLN-Dataset
 ```
 
 ### Training
-We start from the **NaVILA** pretrained model [navila-llama3-8b-8f](https://huggingface.co/a8cheng/navila-llama3-8b-8f), and fine-tune with our reasoning data to learn **self-aware reasoning**. Our trained **AwareVLN weights** are available [here](https://cloud.tsinghua.edu.cn/d/3b94f370dcd945c3b24b/).
+We start from **NaVILA-style VILA**(Llama-3 8B + SigLIP + mm_projector, 8 frames) [navila-llama3-8b-8f](https://huggingface.co/a8cheng/navila-llama3-8b-8f), and fine-tune with our reasoning data to learn **self-aware reasoning**. The pretrained model and our trained **AwareVLN weights** are available [here](https://huggingface.co/gwx22/AwareVLN-ck).
 
 ```bash
 export AWAREVLN_DATA_ROOT=/path/to/data
@@ -138,7 +138,7 @@ evaluation/data/scene_datasets
 ```
 
 ### Running Evaluation
-1. Trained **AwareVLN weights** are available [here](https://cloud.tsinghua.edu.cn/d/3b94f370dcd945c3b24b/), or use your own `outputs/`.
+1. Trained **AwareVLN weights** are available [here](https://huggingface.co/gwx22/AwareVLN-ck), or use your own `outputs/`.
 2. Run evaluation on R2R-CE using:
 ```bash
 cd evaluation
