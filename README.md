@@ -65,7 +65,7 @@ AwareVLN-Dataset
 ```
 
 ### Training
-We start from **NaVILA-style VILA**(Llama-3 8B + SigLIP + mm_projector, 8 frames) [navila-llama3-8b-8f](https://huggingface.co/a8cheng/navila-llama3-8b-8f), and fine-tune with our reasoning data to learn **self-aware reasoning**. The pretrained model and our trained **AwareVLN weights** are available [here](https://huggingface.co/gwx22/AwareVLN-ck).
+We start from **NaVILA-style VILA** (Llama-3 8B + SigLIP + mm_projector, 8 frames), and fine-tune with our reasoning data to learn **self-aware reasoning**. The pretrained model and our trained **AwareVLN weights** are available [here](https://huggingface.co/gwx22/AwareVLN-ck).
 
 ```bash
 export AWAREVLN_DATA_ROOT=/path/to/data
